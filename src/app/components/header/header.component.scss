@@ -1,4 +1,42 @@
-.container {
-  background-color: darkseagreen;
+.container-fluid {
   padding: 1rem;
 }
+
+.location-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cart-btn{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.5rem 1.3rem;
+  border: 1px solid #9b9b9b;
+  border-radius: 3px;
+  color: #4a4a4a;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.location-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.location-info span {
+  padding-top: 0.5rem;
+}
+.cart-content {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-content :hover {
+  text-decoration: none;
+  background: #dddddd;
+}
+
