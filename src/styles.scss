@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+form {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+$zero: 0;
+$body-bg: #f5f7f9;
+
+$primary: #0a233f;
+$secondary: #2f9d9f;
+
+$primary-text: #4f565c;
+$secondary-text: #9ca7b1;
+
+$white-color: #ffffff;
+$gray: #e8ebed;
+
+$loader-shadow: rgba(0, 0, 0, 0.161);
