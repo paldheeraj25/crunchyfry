@@ -1,3 +1,8 @@
+
+$primary: #ddd;
+$dark: #333;
+$light: #fff;
+
 .container-fluid {
   padding: 1rem;
 }
@@ -13,7 +18,7 @@
   padding: 0.5rem 1.3rem;
   border: 1px solid #9b9b9b;
   border-radius: 3px;
-  color: #4a4a4a;
+  color: var(--dark);
   font-size: 15px;
   font-weight: 600;
 }
@@ -43,6 +48,8 @@
 
 .location-info span {
   padding-top: 0.5rem;
+  font-size: 15px;
+  font-weight: 600;
 }
 .cart-content {
   display: flex;
@@ -52,23 +59,32 @@
 .cart-content :hover {
   text-decoration: none;
   background: #dddddd;
+
 }
 
 // menu styles
 .menu ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 0.2rem;
   margin-top: 0.5rem; 
 }
 
 
+
+
 .menu a {
-  background: #dddddd;
+  background: $primary;
   display: block;
   padding: 0.8rem;
   color: #000000;
   text-transform: uppercase;
   text-align: center;
+}
+
+
+.menu a {
+  text-decoration: none;
 }
 
 // media query for smaller screens
@@ -80,6 +96,7 @@
 
   .mobile-crt {
     display:block;
+    padding: 0.3rem 0.9rem 0.3rem;
     margin-top: 0rem !important;
   }
 

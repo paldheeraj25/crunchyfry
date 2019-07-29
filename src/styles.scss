@@ -44,6 +44,14 @@ input {
   line-height: normal;
 }
 
+// default p
+span {
+  font-size: 14px;
+  color: #727272;
+  min-height: 31px;
+  display: -webkit-box;
+}
+
 $zero: 0;
 $body-bg: #f5f7f9;
 
