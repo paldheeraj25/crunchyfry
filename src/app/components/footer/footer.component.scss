@@ -1,0 +1,59 @@
+.container-fluid {
+  padding: 1rem;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  .usefull-link {
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #4a4a4a;
+    }
+  }
+
+  .contact-us {
+
+    .heading {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #4a4a4a;
+    }
+  }
+
+  .tnc {
+    .heading {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #4a4a4a;
+    }
+  }
+
+  .social-media {
+
+    .social-icon {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+}
