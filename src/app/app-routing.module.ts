@@ -1,12 +1,17 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-
-import { HomeComponent } from "./home/home.component";
 import { CrunchDetailsComponent } from "./components/crunch-details/crunch-details.component";
 
 const appRoutes: Routes = [
-  { path: "home", component: HomeComponent },
+  {
+    path: "home",
+    loadChildren: "./home/home.module#HomeModule"
+  },
+  {
+    path: "cart",
+    loadChildren: "./cart/cart.module#CartModule"
+  },
   {
     path: ":id/details",
     component: CrunchDetailsComponent
