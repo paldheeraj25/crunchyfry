@@ -21,6 +21,9 @@ import { HomeRoutingModule } from "./home-routing.module";
     HomeComponent,
     CrunchListComponent,
     FooterComponent
+  ],
+  exports: [
+    HeaderComponent
   ]
 })
 export class HomeModule { }

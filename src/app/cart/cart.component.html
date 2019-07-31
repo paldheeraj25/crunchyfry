@@ -1,3 +1,35 @@
-<p>
-  cart works!
-</p>
+<div class="container-fluid">
+  <!-- app-heaeder -->
+  <app-header></app-header>
+  <!-- cart info -->
+  <section class="cart-info">
+    <h4 class="text-center">Cart total: <i class="fas fa-rupee-sign"></i> 243</h4>
+    <div class="checkout-content text-center">
+      <a class="checkout-btn big-screen-crt" (click)="goToCart()">checkout</a>
+    </div>
+  </section>
+  <br>
+  <!-- cart detail -->
+  <section class="crunch-list-secttion">
+    <div class="crunch-box" *ngFor="let crunch of crunchList; let i=index">
+      <img class="crunch-box-img" src="https://source.unsplash.com/random/300x200" alt="">
+      <h5 class="crunch-box-title">{{crunch.name}}</h5>
+      <p class="crunch-box-desc">{{crunch.desc}}</p>
+      <div class="crunch-weight">
+        <span>weight</span>
+        <div class="text-center">
+          <i class="fas fa-minus-square" (click)="reduceWeight(i)"></i>
+          <input type="number" class="list-weight-input text-center" [(ngModel)]="crunchList[i].weight" value="100">
+          <i class="fas fa-plus-square" (click)="addWeight(i)"></i>
+        </div>
+        <span>grams</span>
+      </div>
+      <div class="crunch-box-ecom-section">
+        <div class="rate"><i class="fas fa-rupee-sign"></i> {{crunch.price}}</div>
+        <div class="crt-section">
+          <button class="remove-frm-cart" (click)="removeFrmCart(crunch)">Remove from Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
