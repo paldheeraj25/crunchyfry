@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 p-3 pl-5 text-center">
+      <img
+        class="crunch-box-img border-radius-3"
+        src="https://source.unsplash.com/random/500x400"
+        alt=""
+      />
+    </div>
+    <div class="col-md-4 p-3 pl-5">
+      <h5 class="crunch-box-title">{{ crunch$.name }}</h5>
+      <p class="crunch-box-desc">{{ crunch$.desc }}</p>
+      <div class="crunch-price-calc">
+        <div class="row">
+          <span class="col-md-2">Weight:</span>
+          <span class="col-md-3 weight-calc"
+            ><i
+              class="fas fa-minus-square cursor-pointer pr-2"
+              [ngClass]="{ disabled: crunch$.currWeight <= crunch$.baseWeight }"
+              (click)="reduceWeight(i)"
+            ></i>
+            <span class="grams pr-2">{{ crunch$.currWeight || 100 }}</span>
+            <i
+              class="fas fa-plus-square cursor-pointer"
+              (click)="addWeight(i)"
+            ></i
+          ></span>
+          <span class="col-md-1">grams</span>
+        </div>
+        <div class="crunch-box-ecom-section">
+          <div class="rate">
+            Price: <i class="fas fa-rupee-sign"></i> {{ crunch$.price }}
+          </div>
+          <div class="crt-section">
+            <button
+              class="add-to-cart addCartBtn-home"
+              (click)="addToCart(crunch)"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
