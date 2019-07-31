@@ -1,29 +1,26 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-
-import { HomeComponent } from "./home/home.component";
+import { CrunchDetailsComponent } from "./components/crunch-details/crunch-details.component";
 
 const appRoutes: Routes = [
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomeModule'
+    path: "home",
+    loadChildren: "./home/home.module#HomeModule"
   },
   {
-    path: 'cart',
-    loadChildren: './cart/cart.module#CartModule'
+    path: "cart",
+    loadChildren: "./cart/cart.module#CartModule"
   },
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    path: ":id/details",
+    component: CrunchDetailsComponent
   },
+  { path: "", redirectTo: "/home", pathMatch: "full" }
 ];
 
 @NgModule({
-  imports: [CommonModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+  imports: [CommonModule, RouterModule.forRoot(appRoutes)],
   declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

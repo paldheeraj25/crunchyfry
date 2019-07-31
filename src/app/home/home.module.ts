@@ -1,14 +1,13 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
-
-import { HeaderComponent } from "./../components/header/header.component";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./home.component";
 import { CrunchListComponent } from "../components/crunch-list/crunch-list.component";
-import { FooterComponent } from "../components/footer/footer.component";
 import { HomeRoutingModule } from "./home-routing.module";
+import { CrunchDetailsComponent } from "../components/crunch-details/crunch-details.component";
+import { HeaderComponent } from "../components/header/header.component";
+import { FooterComponent } from "../components/footer/footer.component";
 
 @NgModule({
   imports: [CommonModule,
@@ -20,7 +19,8 @@ import { HomeRoutingModule } from "./home-routing.module";
     HeaderComponent,
     HomeComponent,
     CrunchListComponent,
-    FooterComponent
+    FooterComponent,
+    CrunchDetailsComponent
   ],
   exports: [
     HeaderComponent

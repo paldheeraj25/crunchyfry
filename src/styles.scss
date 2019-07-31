@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 * {
@@ -21,9 +21,10 @@ ul {
 }
 
 html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 form {
@@ -50,6 +51,10 @@ span {
   color: #727272;
   min-height: 31px;
   display: -webkit-box;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 $zero: 0;
