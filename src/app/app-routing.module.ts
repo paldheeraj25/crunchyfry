@@ -5,15 +5,25 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 
 const appRoutes: Routes = [
-  { path: "home", component: HomeComponent },
-  { path: '',
+  {
+    path: 'home',
+    loadChildren: './home/home.module#HomeModule'
+  },
+  {
+    path: 'cart',
+    loadChildren: './cart/cart.module#CartModule'
+  },
+  {
+    path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   },
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(appRoutes)],
+  imports: [CommonModule,
+    RouterModule.forRoot(appRoutes)
+  ],
   declarations: []
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

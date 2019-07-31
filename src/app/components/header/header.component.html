@@ -4,7 +4,7 @@
     <div class="logo">
       <i name="cog" class="fa fa-list menu-icon" animation="spin">&nbsp;</i>
       <h4>CrunchyFy</h4>
-      <div><a class="cart-btn mobile-crt" href=""><i class="fas fa-shopping-cart"></i></a></div>
+      <div><a class="cart-btn mobile-crt" (click)="goToCart()"><i class="fas fa-shopping-cart"></i></a></div>
     </div>
     <div class="location-info">
       <span class="span-text">availablity in</span>
@@ -12,7 +12,7 @@
       <span class="span-text"><i class="fas fa-chevron-circle-down"></i></span>
     </div>
     <div class="cart-content">
-      <a class="cart-btn big-screen-crt" href="">cart</a>
+      <a class="cart-btn big-screen-crt" (click)="goToCart()">cart</a>
     </div>
   </section>
   <!-- menu -->
