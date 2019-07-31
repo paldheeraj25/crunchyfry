@@ -23,7 +23,8 @@ import { FooterComponent } from "../components/footer/footer.component";
     CrunchDetailsComponent
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class HomeModule { }
