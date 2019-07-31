@@ -1,3 +1,7 @@
+.border-radius-3 {
+  border-radius: 15px;
+}
+
 .container-fluid {
   padding: 1rem;
 }
@@ -46,18 +50,10 @@
   -webkit-box-orient: vertical;
 }
 
-.crunch-weight {
-  display: flex;
-  justify-content: center;
-  .list-weight-input {
-    width: 30%;
-  }
-  .fa-minus-square {
-    cursor: pointer;
-  }
-  .fa-plus-square {
-    cursor: pointer;
-  }
+.crunch-price-calc {
+  border-radius: 3.8px;
+  border: solid 1px rgba(85, 85, 85, 0.38);
+  padding: 1rem;
 }
 @media (max-width: 700px) {
   .crunch-weight {
@@ -65,11 +61,22 @@
   }
 }
 
+.weight-calc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grams {
+  font-weight: 400px;
+  font-size: 16px;
+}
+
 .crunch-box-ecom-section {
   display: flex;
   justify-content: space-between;
 
   padding: 0.5rem;
+  padding-bottom: 0;
   .rate {
     font-size: 18px;
     color: #028008;
