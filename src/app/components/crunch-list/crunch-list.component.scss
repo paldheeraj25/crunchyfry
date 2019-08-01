@@ -68,32 +68,7 @@
 .crunch-box-ecom-section {
   display: flex;
   justify-content: space-between;
-
   padding: 0.5rem;
-  .rate {
-    font-size: 18px;
-    color: #028008;
-    font-weight: 600;
-    line-height: 2;
-  }
-
-  .add-to-cart {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #028008;
-    border: 1px solid #088000;
-    border-radius: 2px;
-    background: #fff;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-
-  .add-to-cart:hover {
-    color: #fff;
-    border: 1px solid #088000;
-    background: #028008;
-  }
 }
 
 @media (max-width: 700px) {
