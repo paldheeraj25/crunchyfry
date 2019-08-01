@@ -16,17 +16,20 @@ export class CrunchListComponent implements OnInit {
     this.crunchList = this.crunchsServ.getCrunchList();
   }
 
-  addToCart(crunch) {
+  addToCart(e, crunch) {
+    e.stopPropagation();
     console.log(crunch);
   }
 
-  addWeight(index) {
+  addWeight(e, index) {
+    e.stopPropagation();
     this.crunchList[index].weight = this.crunchList[index].weight + 100;
     this.crunchList[index].price =
       this.crunchList[index].weight * this.crunchList[index].rate;
   }
 
-  reduceWeight(index) {
+  reduceWeight(e, index) {
+    e.stopPropagation();
     if (this.crunchList[index].weight > 0)
       this.crunchList[index].weight = this.crunchList[index].weight - 100;
 
