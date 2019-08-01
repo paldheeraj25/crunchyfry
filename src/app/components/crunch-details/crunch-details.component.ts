@@ -22,4 +22,11 @@ export class CrunchDetailsComponent implements OnInit {
     });
     this.crunchList$ = this.cruncServ.getCrunchList();
   }
+
+  calcPrice(action) {
+    const weight = this.crunch$.weight;
+    this.crunch$.weight = action === "plus" ? weight + 10 : weight - 10;
+    this.crunch$.price =
+      this.crunch$.pricePer100gms * (this.crunch$.weight / 100);
+  }
 }

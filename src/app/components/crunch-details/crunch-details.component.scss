@@ -1,5 +1,20 @@
 @import "./../../styles/crunch-styles.scss";
 
+.suggestion-container {
+  padding-top: 2rem;
+  width: 80%;
+  margin: auto;
+  .suggestion-title {
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .suggestion-container {
+    width: 100%;
+  }
+}
+
 .border-radius-3 {
   border-radius: 15px;
 }

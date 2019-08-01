@@ -11,6 +11,7 @@ export class CrunchListService {
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,
+      baseWeight: 100,
       rate: 1.2,
       price: 90,
       pricePer100gms: 90
@@ -21,6 +22,7 @@ export class CrunchListService {
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,
+      baseWeight: 100,
       rate: 1.5,
       price: 110,
       pricePer100gms: 110
@@ -31,6 +33,7 @@ export class CrunchListService {
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,
+      baseWeight: 100,
       rate: 1,
       price: 108,
       pricePer100gms: 108
@@ -41,6 +44,7 @@ export class CrunchListService {
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,
+      baseWeight: 100,
       rate: 1.05,
       price: 40,
       pricePer100gms: 40

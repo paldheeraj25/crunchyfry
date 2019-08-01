@@ -3,7 +3,7 @@
     <div class="col-md-6 text-center">
       <img
         class="crunch-box-img border-radius-3"
-        src="https://source.unsplash.com/random/500x400"
+        src="https://source.unsplash.com/random/500x300"
         alt=""
       />
     </div>
@@ -13,18 +13,20 @@
       <div class="crunch-price-calc">
         <div class="row">
           <span class="col-md-2">Weight:</span>
-          <span class="col-md-3 weight-calc"
-            ><i
+          <span class="col-md-3 weight-calc">
+            <i
               class="fas fa-minus-square cursor-pointer pr-2"
-              [ngClass]="{ disabled: crunch$.currWeight <= crunch$.baseWeight }"
-              (click)="reduceWeight(i)"
-            ></i>
-            <span class="grams pr-2">{{ crunch$.currWeight || 100 }}</span>
+              [ngClass]="{ disabled: crunch$.weight <= crunch$.baseWeight }"
+              (click)="calcPrice('minus')"
+            >
+            </i>
+            <span class="grams pr-2">{{ crunch$.weight }}</span>
             <i
               class="fas fa-plus-square cursor-pointer"
-              (click)="addWeight(i)"
-            ></i
-          ></span>
+              (click)="calcPrice('plus')"
+            >
+            </i>
+          </span>
           <span class="col-md-1">grams</span>
         </div>
         <div class="crunch-box-ecom-section">
@@ -44,11 +46,11 @@
     </div>
   </div>
   <section class="suggestion-container">
-    <h5>You may also like</h5>
+    <h5 class="suggestion-title">You may also like</h5>
     <section class="crunch-list-secttion">
       <div
         class="crunch-box"
-        *ngFor="let crunch of crunchList$ | slice: 0:2; let i = index"
+        *ngFor="let crunch of crunchList$ | slice: 0:4; let i = index"
         (click)="detailsView(crunch)"
       >
         <img

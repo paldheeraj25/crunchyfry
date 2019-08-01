@@ -55,6 +55,12 @@ span {
   cursor: pointer;
 }
 
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
 /* Variables */
 $zero: 0;
 $body-bg: #f5f7f9;
