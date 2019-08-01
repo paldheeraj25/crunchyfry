@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -41,7 +42,7 @@ export class CartComponent implements OnInit {
       price: 80
     },
   ]
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
@@ -57,6 +58,10 @@ export class CartComponent implements OnInit {
       this.crunchList[index].weight = this.crunchList[index].weight - 100;
 
     this.crunchList[index].price = this.crunchList[index].weight * this.crunchList[index].rate
+  }
+
+  goToPayment() {
+    this.router.navigate(['cart/payment']);
   }
 
 }

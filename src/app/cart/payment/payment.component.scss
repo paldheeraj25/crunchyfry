@@ -1,0 +1,14 @@
+.container-fluid {
+  padding: 1rem;
+}
+
+.payment-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem;
+
+  .heading {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}

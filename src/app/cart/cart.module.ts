@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './cart.component';
 import { HomeModule } from '../home/home.module';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { HomeModule } from '../home/home.module';
     FormsModule,
     HomeModule
   ],
-  declarations: [CartComponent]
+  declarations: [CartComponent, PaymentComponent]
 })
 export class CartModule { }
