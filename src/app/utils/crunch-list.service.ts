@@ -6,40 +6,44 @@ import { Injectable } from "@angular/core";
 export class CrunchListService {
   list = [
     {
-      id: "crunch-one",
-      name: "Crunch One",
+      id: "jacker-potato",
+      name: "Jacker Potato Crisps, Hot and crispy flavour",
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,
       rate: 1.2,
-      price: 120
+      price: 90,
+      pricePer100gms: 90
     },
     {
-      id: "crunch-two",
-      name: "Crunch Two",
+      id: "cornitoes-green-peas",
+      name: "Cornitoes Coated Green Peas",
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,
       rate: 1.5,
-      price: 150
+      price: 110,
+      pricePer100gms: 110
     },
     {
-      id: "crunch-three",
-      name: "Crunch Three",
+      id: "neo-burger",
+      name: "Neo Burger Chips",
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,
       rate: 1,
-      price: 100
+      price: 108,
+      pricePer100gms: 108
     },
     {
-      id: "crunch-four",
-      name: "Crunch Four",
+      id: "too-yum-multigrain",
+      name: "Too Yumm Multigrain Chips",
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,
       rate: 1.05,
-      price: 80
+      price: 40,
+      pricePer100gms: 40
     }
   ];
   constructor() {}

@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { CrunchListService } from "src/app/utils/crunch-list.service";
-import { switchMap } from "rxjs/operators";
-import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-crunch-details",
@@ -11,15 +10,16 @@ import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 export class CrunchDetailsComponent implements OnInit {
   crunch$;
   weight = 100;
+  crunchList$;
   constructor(
     private cruncServ: CrunchListService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.crunch$ = this.cruncServ.getACrunch(params.id);
     });
+    this.crunchList$ = this.cruncServ.getCrunchList();
   }
 }

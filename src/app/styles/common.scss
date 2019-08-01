@@ -69,28 +69,3 @@ $white-color: #ffffff;
 $gray: #e8ebed;
 
 $loader-shadow: rgba(0, 0, 0, 0.161);
-
-/* Global styles */
-.add-to-cart {
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #028008;
-  border: 1px solid #088000;
-  border-radius: 2px;
-  background: #fff;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.add-to-cart:hover {
-  color: #fff;
-  border: 1px solid #088000;
-  background: #028008;
-}
-.rate {
-  font-size: 18px;
-  color: #028008;
-  font-weight: 600;
-  line-height: 2;
-}

@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 p-3 pl-5 text-center">
+    <div class="col-md-6 text-center">
       <img
         class="crunch-box-img border-radius-3"
         src="https://source.unsplash.com/random/500x400"
         alt=""
       />
     </div>
-    <div class="col-md-4 p-3 pl-5">
+    <div class="col-md-4">
       <h5 class="crunch-box-title">{{ crunch$.name }}</h5>
       <p class="crunch-box-desc">{{ crunch$.desc }}</p>
       <div class="crunch-price-calc">
@@ -42,6 +42,53 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2"></div>
   </div>
+  <section class="suggestion-container">
+    <h5>You may also like</h5>
+    <section class="crunch-list-secttion">
+      <div
+        class="crunch-box"
+        *ngFor="let crunch of crunchList$ | slice: 0:2; let i = index"
+        (click)="detailsView(crunch)"
+      >
+        <img
+          class="crunch-box-img"
+          src="https://source.unsplash.com/random/300x200"
+          alt=""
+        />
+        <h5 class="crunch-box-title">{{ crunch.name }}</h5>
+        <p class="crunch-box-desc">{{ crunch.desc }}</p>
+        <div class="crunch-weight">
+          <span>weight</span>
+          <div class="text-center">
+            <i
+              class="fas fa-minus-square"
+              (click)="reduceWeight($event, i)"
+            ></i>
+            <input
+              type="number"
+              class="list-weight-input text-center"
+              [(ngModel)]="crunchList$[i].weight"
+              value="100"
+            />
+            <i class="fas fa-plus-square" (click)="addWeight($event, i)"></i>
+          </div>
+          <span>grams</span>
+        </div>
+        <div class="crunch-box-ecom-section">
+          <div class="rate">
+            <i class="fas fa-rupee-sign"></i> {{ crunch.price }}
+          </div>
+          <div class="crt-section">
+            <button
+              class="add-to-cart addCartBtn-home"
+              (click)="addToCart($event, crunch)"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
 </div>
