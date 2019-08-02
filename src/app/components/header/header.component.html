@@ -3,13 +3,13 @@
   <section class="location-area">
     <div class="logo">
       <i name="cog" class="fa fa-list menu-icon" animation="spin">&nbsp;</i>
-      <h4 (click)="goToHome()">CrunchyFy</h4>
+      <h4 class="heading" (click)="goToHome()">CrunchyFy</h4>
       <div><a class="cart-btn mobile-crt" (click)="goToCart()"><i class="fas fa-shopping-cart"></i></a></div>
     </div>
     <div class="location-info">
-      <span class="span-text">availablity in</span>
-      <span class="span-text"> <i class="fas fa-map-marker-alt"></i> Bangalore</span>
-      <span class="span-text"><i class="fas fa-chevron-circle-down"></i></span>
+      <span class="span-text-bold">availablity in</span>
+      <span class="span-text-bold"> <i class="fas fa-map-marker-alt"></i> Bangalore</span>
+      <span class="span-text-bold"><i class="fas fa-chevron-circle-down"></i></span>
     </div>
     <div class="cart-content">
       <a class="cart-btn big-screen-crt" (click)="goToCart()">cart</a>
@@ -18,10 +18,12 @@
   <!-- menu -->
   <section class="menu">
     <ul>
-      <li><a href="#">menu</a></li>
-      <li><a href="#">menu</a></li>
-      <li><a href="#">menu</a></li>
-      <li><a href="#">menu</a></li>
+      <li class="heading">
+        <a href="#">menu</a>
+      </li>
+      <li class="heading"><a href="#">menu</a></li>
+      <li class="heading"><a href="#">menu</a></li>
+      <li class="heading"><a href="#">menu</a></li>
     </ul>
   </section>
 </div>

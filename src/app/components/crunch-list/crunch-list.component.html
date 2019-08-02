@@ -3,13 +3,13 @@
     <div class="crunch-box" *ngFor="let crunch of crunchList; let i = index">
       <img class="crunch-box-img" src="https://source.unsplash.com/random/300x200" alt="" (click)="detailsView(crunch)" />
       <h5 class="crunch-box-title" (click)="detailsView(crunch)">{{ crunch.name }}</h5>
-      <p class="crunch-box-desc">{{ crunch.desc }}</p>
+      <p class="span-text">{{ crunch.desc }}</p>
       <div class="crunch-weight">
         <span>weight</span>
         <div class="text-center">
-          <i class="fas fa-minus-square" (click)="reduceWeight(i)"></i>
+          <i class="fas fa-minus-square" (click)="reduceWeight($event, i)"></i>
           <input type="number" class="list-weight-input text-center" [(ngModel)]="crunchList[i].weight" value="100" />
-          <i class="fas fa-plus-square" (click)="addWeight(i)"></i>
+          <i class="fas fa-plus-square" (click)="addWeight($event, i)"></i>
         </div>
         <span>grams</span>
       </div>
@@ -18,7 +18,7 @@
           <i class="fas fa-rupee-sign"></i> {{ crunch.price }}
         </div>
         <div class="crt-section">
-          <button class="add-to-cart addCartBtn-home" (click)="addToCart(crunch)">
+          <button class="primary-btn addCartBtn-home" (click)="addToCart($event, crunch)">
             Add To Cart
           </button>
         </div>

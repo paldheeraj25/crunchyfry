@@ -3,9 +3,9 @@
   <!-- <app-header></app-header> -->
   <!-- cart info -->
   <section class="cart-info">
-    <h4 class="text-center">Cart total: <i class="fas fa-rupee-sign"></i> 243</h4>
+    <h5 class="text-center heading">Cart total: <i class="fas fa-rupee-sign"></i> 243</h5>
     <div class="checkout-content text-center">
-      <a class="checkout-btn big-screen-crt" (click)="goToPayment()">checkout</a>
+      <button class="primary-btn" (click)="goToPayment()">checkout</button>
     </div>
   </section>
   <br>
@@ -14,7 +14,7 @@
     <div class="crunch-box" *ngFor="let crunch of crunchList; let i=index">
       <img class="crunch-box-img" src="https://source.unsplash.com/random/300x200" alt="">
       <h5 class="crunch-box-title">{{crunch.name}}</h5>
-      <p class="crunch-box-desc">{{crunch.desc}}</p>
+      <p class="span-text">{{crunch.desc}}</p>
       <div class="crunch-weight">
         <span>weight</span>
         <div class="text-center">
@@ -27,7 +27,7 @@
       <div class="crunch-box-ecom-section">
         <div class="rate"><i class="fas fa-rupee-sign"></i> {{crunch.price}}</div>
         <div class="crt-section">
-          <button class="remove-frm-cart" (click)="removeFrmCart(crunch)">Remove from Cart</button>
+          <button class="secondary-btn" (click)="removeFrmCart(crunch)">Remove from Cart</button>
         </div>
       </div>
     </div>

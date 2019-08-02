@@ -1,72 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+/* Styles.scss is useful in writing global styles or importing other styles */
+
+/* Modules styles */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+/* Local styles */
+@import "./app/styles/common.scss";
+
+// typography
+
+// general heading
+.heading {
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-html {
-  line-height: 1.5;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-form {
-  margin: 0;
-}
-
-button,
-input,
-select,
-textarea {
-  font-size: 100%;
-  margin: 0;
-  vertical-align: baseline;
-}
-
-button,
-input {
-  line-height: normal;
-}
-
-// default p
-span {
+// span
+.span-text {
+  padding: 0 1rem;
   font-size: 14px;
   color: #727272;
+  padding: 0.3rem;
+  line-height: 1.2;
+  white-space: normal;
   min-height: 31px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
   display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
-.cursor-pointer {
+// span bolder
+.span-text-bold {
+  padding-top: 0.5rem;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+// Buttons
+
+// primary button
+.primary-btn {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #028008;
+  border: 1px solid #088000;
+  border-radius: 2px;
+  background: #fff;
+  padding: 5px 10px;
   cursor: pointer;
+  font-weight: 600;
 }
 
-$zero: 0;
-$body-bg: #f5f7f9;
+.primary-btn:hover {
+  color: #fff;
+  border: 1px solid #088000;
+  background: #028008;
+}
 
-$primary: #0a233f;
-$secondary: #2f9d9f;
+// secondary button
 
-$primary-text: #4f565c;
-$secondary-text: #9ca7b1;
+.secondary-btn {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #e01930;
+  border: 1px solid #e01930;
+  border-radius: 2px;
+  background: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
 
-$white-color: #ffffff;
-$gray: #e8ebed;
-
-$loader-shadow: rgba(0, 0, 0, 0.161);
+.secondary-btn:hover {
+  color: #fff;
+  border: 1px solid #e01930;
+  background: #e01930;
+}
