@@ -38,3 +38,35 @@
   }
 
 }
+
+@media (max-width: 700px) {
+  .payment-info {
+    width: 100%;
+
+    .group-field-container {
+      display: flex;
+      flex-direction: row;
+      padding: 1rem;
+      justify-content: space-evenly;
+  
+      .group-field {
+        width: 100% ;
+      }
+    }
+
+    .single-field-container{
+      width: 100%;
+    }
+    .sub {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      justify-content: space-evenly;
+      .pay-btn {
+        width: 100%;
+        margin-bottom: 1rem;
+        
+      }
+    }
+  }
+}

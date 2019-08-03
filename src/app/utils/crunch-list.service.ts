@@ -7,7 +7,7 @@ export class CrunchListService {
   list = [
     {
       id: "jacker-potato",
-      name: "Jacker Potato Crisps, Hot and crispy flavour",
+      name: "Jacker Potato Crisps",
       desc:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, molestiae?",
       weight: 100,

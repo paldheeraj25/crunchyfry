@@ -7,6 +7,19 @@ $light: #fff;
   padding: 1rem;
 }
 
+.logo-cuctom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .logo-front{
+    color: #736665;
+  }
+  .logo-color {
+    color: #e72b4b;
+  }
+}
+
 .location-area {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15,10 +28,11 @@ $light: #fff;
 .cart-btn{
   display: inline-block;
   vertical-align: middle;
+  color: #ffffff !important;
+  background: #e72b4b;
   padding: 0.5rem 1.3rem;
-  border: 1px solid #9b9b9b;
-  border-radius: 3px;
-  color: var(--dark);
+  border: 1px solid #ffffff;
+  border-radius: 0.3rem;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -52,11 +66,6 @@ $light: #fff;
   justify-content: center;
 }
 
-.cart-content :hover {
-  text-decoration: none;
-  background: #dddddd;
-
-}
 
 // menu styles
 .menu ul {
@@ -70,10 +79,10 @@ $light: #fff;
 
 
 .menu a {
-  background: $primary;
+  background: #736665;
   display: block;
   padding: 0.8rem;
-  color: #000000;
+  color: #eae9db;
   text-transform: uppercase;
   text-align: center;
 }

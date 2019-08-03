@@ -7,6 +7,12 @@
 /* Local styles */
 @import "./app/styles/common.scss";
 
+// color pallet
+//#910135
+//#e72b4b
+//#736665
+//#e67534
+//#eae9db
 
 // typography
 
@@ -37,6 +43,11 @@
   padding-top: 0.5rem;
   font-size: 15px;
   font-weight: 600;
+}
+
+// span primary
+.span-primary {
+  color: #e72b4b;
 }
 
 // Buttons
