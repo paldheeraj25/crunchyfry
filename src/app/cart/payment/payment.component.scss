@@ -4,11 +4,37 @@
 
 .payment-info {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   padding: 1rem;
+  width: 70%;
+  margin: 0 auto;
 
-  .heading {
-    text-transform: uppercase;
-    font-weight: 600;
+  .group-field-container {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: space-evenly;
+
+    .group-field {
+      width: 25% ;
+    }
+  
   }
+
+  .single-field-container{
+    width: 69%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+    .pay-btn {
+      width: 20%;
+    }
+  }
+
 }
