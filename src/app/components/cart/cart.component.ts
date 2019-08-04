@@ -1,14 +1,20 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-cart",
   templateUrl: "./cart.component.html",
   styleUrls: ["./cart.component.scss"]
 })
-export class CartComponent implements OnInit {
-  toggleBackground = false;
-  toggleCart = false;
+export class CartComponent {
+  @Input()
+  setCart = false;
+
+  @Output()
+  unsetCart = new EventEmitter();
+
   constructor() {}
 
-  ngOnInit() {}
+  onClose() {
+    this.unsetCart.emit();
+  }
 }

@@ -1,12 +1,13 @@
 <div
   class="cart-screen"
   [ngClass]="{
-    'display-block': toggleBackground,
-    'display-none': !toggleBackground
+    'display-block': setCart,
+    'display-none': !setCart
   }"
+  (click)="onClose()"
 ></div>
-<!-- <div class="cart-screen"></div> -->
 
-<div class="li-cart-summary-wrapper" [ngClass]="{ show: toggleCart }">
+<div class="li-cart-summary-wrapper" [ngClass]="{ show: setCart }">
   Hello Cart page
+  <div (click)="onClose()">Close</div>
 </div>
