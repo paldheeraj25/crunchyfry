@@ -7,16 +7,11 @@ import { Router } from "@angular/router";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(public router: Router) { }
-
-  ngOnInit() { }
-
-  goToCart() {
-    this.router.navigate(['cart']);
-  }
+  constructor(public router: Router) {}
+  toggleCart = false;
+  ngOnInit() {}
 
   goToHome() {
-    this.router.navigate(['home']);
+    this.router.navigate(["home"]);
   }
 }

@@ -9,8 +9,8 @@ const appRoutes: Routes = [
     loadChildren: "./home/home.module#HomeModule"
   },
   {
-    path: "cart",
-    loadChildren: "./cart/cart.module#CartModule"
+    path: "user",
+    loadChildren: "./checkout/checkout.module#CheckoutModule"
   },
   {
     path: ":id/details",

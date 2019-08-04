@@ -19,4 +19,4 @@ import { HomeModule } from "./home/home.module";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
