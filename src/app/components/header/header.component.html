@@ -9,7 +9,7 @@
       </div>
 
       <div>
-        <a class="cart-btn mobile-crt" (click)="toggleCart = !toggleCart"
+        <a class="cart-btn mobile-crt" (click)="showCart()"
           ><i class="fas fa-shopping-cart"></i
         ></a>
       </div>
@@ -24,9 +24,7 @@
       ></span>
     </div>
     <div class="cart-content">
-      <a class="cart-btn big-screen-crt" (click)="toggleCart = !toggleCart"
-        >cart</a
-      >
+      <a class="cart-btn big-screen-crt" (click)="showCart()">cart</a>
     </div>
   </section>
   <!-- menu -->
@@ -40,5 +38,8 @@
       <li class="heading"><a href="#">menu</a></li>
     </ul>
   </section>
-  <app-cart></app-cart>
+  <span>{{ toggleCart }}</span>
+  <div [hidden]="!toggleCart">
+    <app-cart [setCart]="true" (unsetCart)="onUnsetCart()"></app-cart>
+  </div>
 </div>
