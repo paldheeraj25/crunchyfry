@@ -38,7 +38,6 @@
       <li class="heading"><a href="#">menu</a></li>
     </ul>
   </section>
-  <span>{{ toggleCart }}</span>
   <div [hidden]="!toggleCart">
     <app-cart [setCart]="true" (unsetCart)="onUnsetCart()"></app-cart>
   </div>

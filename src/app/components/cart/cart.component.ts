@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
+import { CrunchListService } from "src/app/utils/crunch-list.service";
 
 @Component({
   selector: "app-cart",
@@ -8,11 +9,13 @@ import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 export class CartComponent {
   @Input()
   setCart = false;
-
   @Output()
   unsetCart = new EventEmitter();
 
-  constructor() {}
+  carts$ = [];
+  constructor(private crunchListServ: CrunchListService) {
+    this.carts$ = this.crunchListServ.getCrunchList();
+  }
 
   onClose() {
     this.unsetCart.emit();
