@@ -8,15 +8,25 @@
         <h4 class="heading logo-color">Fy</h4>
       </div>
 
-      <div><a class="cart-btn mobile-crt" (click)="goToCart()"><i class="fas fa-shopping-cart"></i></a></div>
+      <div>
+        <a class="cart-btn mobile-crt" (click)="toggleCart = !toggleCart"
+          ><i class="fas fa-shopping-cart"></i
+        ></a>
+      </div>
     </div>
     <div class="location-info">
       <span class="span-text-bold">availablity in</span>
-      <span class="span-text-bold span-primary"> <i class="fas fa-map-marker-alt"></i> Bangalore</span>
-      <span class="span-text-bold"><i class="fas fa-chevron-circle-down"></i></span>
+      <span class="span-text-bold span-primary">
+        <i class="fas fa-map-marker-alt"></i> Bangalore</span
+      >
+      <span class="span-text-bold"
+        ><i class="fas fa-chevron-circle-down"></i
+      ></span>
     </div>
     <div class="cart-content">
-      <a class="cart-btn big-screen-crt" (click)="goToCart()">cart</a>
+      <a class="cart-btn big-screen-crt" (click)="toggleCart = !toggleCart"
+        >cart</a
+      >
     </div>
   </section>
   <!-- menu -->
@@ -30,4 +40,5 @@
       <li class="heading"><a href="#">menu</a></li>
     </ul>
   </section>
+  <app-cart></app-cart>
 </div>

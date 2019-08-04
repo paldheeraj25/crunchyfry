@@ -8,23 +8,18 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { CrunchDetailsComponent } from "../components/crunch-details/crunch-details.component";
 import { HeaderComponent } from "../components/header/header.component";
 import { FooterComponent } from "../components/footer/footer.component";
+import { CartComponent } from "../components/cart/cart.component";
 
 @NgModule({
-  imports: [CommonModule,
-    FormsModule,
-    RouterModule,
-    HomeRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, RouterModule, HomeRoutingModule],
   declarations: [
     HeaderComponent,
+    CartComponent,
     HomeComponent,
     CrunchListComponent,
     FooterComponent,
     CrunchDetailsComponent
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent
-  ]
+  exports: [HeaderComponent, FooterComponent]
 })
-export class HomeModule { }
+export class HomeModule {}
