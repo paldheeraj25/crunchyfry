@@ -6,12 +6,19 @@ import { Router } from "@angular/router";
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   constructor(public router: Router) {}
   toggleCart = false;
-  ngOnInit() {}
 
   goToHome() {
     this.router.navigate(["home"]);
+  }
+
+  showCart() {
+    this.toggleCart = true;
+  }
+
+  onUnsetCart() {
+    this.toggleCart = false;
   }
 }
