@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 import { CrunchListService } from "../../utils/crunch-list.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-cart",
@@ -13,11 +14,15 @@ export class CartComponent {
   unsetCart = new EventEmitter();
 
   carts$ = [];
-  constructor(private crunchListServ: CrunchListService) {
+  constructor(private crunchListServ: CrunchListService, public router: Router) {
     this.carts$ = this.crunchListServ.getCrunchList();
   }
 
   onClose() {
     this.unsetCart.emit();
+  }
+
+  checkout() {
+    this.router.navigate(["/checkout/checkout-address"]);
   }
 }
