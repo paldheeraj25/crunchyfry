@@ -1,11 +1,7 @@
-<div
-  class="cart-screen"
-  [ngClass]="{
+<div class="cart-screen" [ngClass]="{
     'display-block': setCart,
     'display-none': !setCart
-  }"
-  (click)="onClose()"
-></div>
+  }" (click)="onClose()"></div>
 
 <div class="li-cart-summary-wrapper" [ngClass]="{ show: setCart }">
   <div class="row p-4">
@@ -21,7 +17,7 @@
     <div class="cart-list-container">
       <div class="row cart-item" *ngFor="let item of carts$; let i = index">
         <div class="col-md-8 col-sm-8 col-xs-8">
-          <label class="pb-3">{{ item.name }}</label>
+          <label class="pb-2 heading">{{ item.name }}</label>
           <div class="pb-2">
             <span class="pr-4">
               <label>Weight:</label> {{ item.weight }} grams
