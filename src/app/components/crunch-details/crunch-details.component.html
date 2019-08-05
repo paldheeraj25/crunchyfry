@@ -35,7 +35,7 @@
           </div>
           <div class="crt-section">
             <button
-              class="add-to-cart addCartBtn-home"
+              class="primary-btn addCartBtn-home"
               (click)="addToCart(crunch)"
             >
               Add To Cart
@@ -49,7 +49,7 @@
     <h5 class="suggestion-title">You may also like</h5>
     <section class="crunch-list-secttion">
       <div
-        class="crunch-box"
+        class="crunch-box cursor-pointer"
         *ngFor="let crunch of crunchList$ | slice: 0:4; let i = index"
         (click)="detailsView(crunch)"
       >
@@ -83,7 +83,7 @@
           </div>
           <div class="crt-section">
             <button
-              class="add-to-cart addCartBtn-home"
+              class="primary-btn addCartBtn-home"
               (click)="addToCart($event, crunch)"
             >
               Add To Cart
