@@ -10,10 +10,9 @@ export class CartService {
   private cartViewUpdated = new Subject<any>();
   public updateCart$ = this.cartViewUpdated.asObservable();
 
-  constructor() {}
+  constructor() { }
 
   showCart() {
-    console.log("hello");
     this.toggleCart = true;
     this.cartViewUpdated.next({ value: this.toggleCart });
   }

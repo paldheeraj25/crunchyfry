@@ -20,6 +20,6 @@ import { CartComponent } from "../components/cart/cart.component";
     FooterComponent,
     CrunchDetailsComponent
   ],
-  exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent, CartComponent]
 })
-export class HomeModule {}
+export class HomeModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CrunchListService } from '../../utils/crunch-list.service';
+
 
 @Component({
   selector: 'app-delivery-summary',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeliverySummaryComponent implements OnInit {
 
-  constructor() { }
+  carts$ = [];
+  constructor(private crunchListServ: CrunchListService) {
+    this.carts$ = this.crunchListServ.getCrunchList();
+  }
 
   ngOnInit() {
   }

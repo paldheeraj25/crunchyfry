@@ -1,0 +1,42 @@
+.container-fluid {
+  padding: 1rem;
+}
+
+.payment-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem;
+  width: 70%;
+  margin: 0 auto;
+
+  .order-steps {
+    display: flex;
+    align-items: center;
+    .order-step-ul {
+      h5 {
+        margin-left: 1rem;
+      }
+
+      .active {
+        color: #e72b4b;
+      }
+    }
+  }
+
+  .single-field-container{
+    width: 69%;
+    margin: 0 auto;
+    padding: 0.3rem;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .payment-info {
+    width: 100%;
+
+    .single-field-container{
+      width: 100%;
+    }
+  }
+}

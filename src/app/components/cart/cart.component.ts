@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
-import { CrunchListService } from "src/app/utils/crunch-list.service";
+import { CrunchListService } from "../../utils/crunch-list.service";
 
 @Component({
   selector: "app-cart",

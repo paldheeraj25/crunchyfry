@@ -1,0 +1,72 @@
+
+@import "./../../styles/crunch-styles.scss";
+
+.container-fluid {
+  padding: 1rem;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem;
+  width: 70%;
+  margin: 0 auto;
+
+  .order-summary {
+    padding: 2rem;
+  }
+
+  .order-steps {
+    display: flex;
+    align-items: center;
+    .order-step-ul {
+      h5 {
+        margin-left: 1rem;
+      }
+
+      .active {
+        color: #e72b4b;
+      }
+    }
+  }
+
+  .sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+    .pay-btn {
+      width: 35%;
+    }
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .sub {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-evenly;
+    .pay-btn {
+      width: 100%;
+      margin-bottom: 1rem;
+      
+    }
+  }
+}
+
+// cart styles
+
+.cart-list-container {
+  padding-top: 0.2rem;
+}
+
+.cart-item {
+  border-bottom: 1px solid #cbcbcb;
+  margin: 1rem;
+  span {
+    display: inline;
+  }
+}
