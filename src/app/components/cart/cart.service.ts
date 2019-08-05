@@ -5,21 +5,20 @@ import { Subject } from "rxjs";
   providedIn: "root"
 })
 export class CartService {
-  toggleCart = false;
-  // cartViewUpdated: EventEmitter<any> = new EventEmitter();
-  private cartViewUpdated = new Subject<any>();
-  public updateCart$ = this.cartViewUpdated.asObservable();
-
   constructor() {}
 
-  showCart() {
-    console.log("hello");
-    this.toggleCart = true;
-    this.cartViewUpdated.next({ value: this.toggleCart });
+  calcPrice(item, action) {
+    const weight = item.weight;
+    item.weight = action === "plus" ? weight + 50 : weight - 50;
+    item.price = Math.floor(item.pricePer100gms * (item.weight / 100));
+    return item;
   }
 
-  hideCart() {
-    this.toggleCart = false;
-    this.cartViewUpdated.next({ text: this.toggleCart });
+  calcTotalPrice(items) {
+    const totalPrice = items.reduce(function(sum, cart) {
+      return sum + cart.price;
+    }, 0);
+    const deliveryCharges = totalPrice < 500 ? 50 : 0;
+    return { totalPrice, deliveryCharges };
   }
 }
