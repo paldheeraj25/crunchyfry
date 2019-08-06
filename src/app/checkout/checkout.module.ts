@@ -10,4 +10,4 @@ import { DeliverySummaryComponent } from './delivery-summary/delivery-summary.co
   imports: [CommonModule, CheckoutRoutingModule],
   declarations: [PaymentComponent, DeliveryAddressComponent, DeliverySummaryComponent]
 })
-export class CheckoutModule {}
+export class CheckoutModule { }

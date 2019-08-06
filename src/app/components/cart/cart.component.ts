@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { CrunchListService } from "src/app/utils/crunch-list.service";
 import { CartService } from "./cart.service";
 import { Subscription } from "rxjs";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-cart",
@@ -55,5 +56,8 @@ export class CartComponent {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+  checkout() {
+    this.router.navigate(["/checkout/checkout-address"]);
   }
 }

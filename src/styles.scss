@@ -14,12 +14,28 @@
 //#e67534
 //#eae9db
 
+// logo
+.logo-cuctom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
+
+  .logo-front{
+    color: #736665;
+  }
+  .logo-color {
+    color: #e72b4b;
+  }
+}
+
 // typography
 
 // general heading
 .heading {
   text-transform: uppercase;
   font-weight: 600;
+  color: #736665;
 }
 
 // span
@@ -56,8 +72,8 @@
 .primary-btn {
   font-size: 14px;
   text-transform: uppercase;
-  color: #028008;
-  border: 1px solid #088000;
+  color: #e67534;
+  border: 1px solid #e67534;
   border-radius: 2px;
   background: #fff;
   padding: 5px 10px;
@@ -67,8 +83,8 @@
 
 .primary-btn:hover {
   color: #fff;
-  border: 1px solid #088000;
-  background: #028008;
+  border: 1px solid #e67534;
+  background: #e67534;
 }
 
 // secondary button

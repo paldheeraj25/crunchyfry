@@ -7,19 +7,6 @@ $light: #fff;
   padding: 1rem;
 }
 
-.logo-cuctom {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  .logo-front{
-    color: #736665;
-  }
-  .logo-color {
-    color: #e72b4b;
-  }
-}
-
 .location-area {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

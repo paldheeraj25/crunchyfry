@@ -16,6 +16,10 @@ const appRoutes: Routes = [
     path: ":id/details",
     component: CrunchDetailsComponent
   },
+  {
+    path: "checkout",
+    loadChildren: "./checkout/checkout.module#CheckoutModule"
+  },
   { path: "", redirectTo: "/home", pathMatch: "full" }
 ];
 
@@ -23,4 +27,4 @@ const appRoutes: Routes = [
   imports: [CommonModule, RouterModule.forRoot(appRoutes)],
   declarations: []
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

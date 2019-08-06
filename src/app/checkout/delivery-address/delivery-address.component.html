@@ -1,3 +1,52 @@
-<p>
-  delivery-address works!
-</p>
+<div class="container-fluid">
+
+  <div class="payment-info">
+    <div class="crunch-box ml-2 mr-2">
+      <h4 class="carts-length heading text-center">Add new address</h4>
+      <div class="single-field-container">
+        <input class="form-control" type="text" placeholder="Enter location">
+      </div>
+      <div class="single-field-container">
+        <input class="form-control" type="text" placeholder="Flat no./ Building Name/ Street name">
+      </div>
+      <div class="single-field-container">
+        <input class="form-control" type="text" placeholder="Land mark (Optional)">
+      </div>
+      <div class="single-field-container">
+        <input class="form-control" type="text" placeholder="City">
+      </div>
+      <div class="single-field-container">
+        <input class="form-control" type="text" placeholder="Mobile number">
+      </div>
+      <div class="single-field-container">
+        <input class="form-control" type="text" placeholder="Full name">
+      </div>
+      <div class="single-field-container text-center p-3">
+        <button class="primary-btn" (click)="showDelSummary()">Save and Proceed</button>
+      </div>
+    </div>
+    <div class="order-steps">
+      <ul class="order-step-ul">
+        <li>
+          <h5 class="heading active">Address</h5>
+          <div>|</div>
+          <div>|</div>
+          <div>|</div>
+          <div>|</div>
+          <div>|</div>
+        </li>
+        <li>
+          <h5 class="heading">Shipment</h5>
+          <div>|</div>
+          <div>|</div>
+          <div>|</div>
+          <div>|</div>
+          <div>|</div>
+        </li>
+        <li>
+          <h5 class="heading">Payment</h5>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+@import "./../../styles/crunch-styles.scss";
+
+.container-fluid {
+  padding: 1rem;
+}
+
+.payment-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 70%;
+  margin: 0 auto;
+
+  .order-steps {
+    display: flex;
+    align-items: center;
+    .order-step-ul {
+      margin-left: 3rem;
+      h5 {
+        margin-left: 1rem;
+      }
+
+      .active {
+        color: #e72b4b;
+      }
+    }
+  }
+
+  .single-field-container{
+    width: 98%;
+    margin: 0 auto;
+    padding: 0.3rem;
+  }
+
+  .carts-length {
+    background-color: #736665;
+    font-size: 20px;
+    padding: 1rem;
+    color: #eae9db;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .payment-info {
+    width: 100%;
+
+    .single-field-container{
+      width: 100%;
+    }
+  }
+}
