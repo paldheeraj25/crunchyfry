@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CrunchListService } from "src/app/utils/crunch-list.service";
 import { ActivatedRoute } from "@angular/router";
+import { CartService } from "../cart/cart.service";
 
 @Component({
   selector: "app-crunch-details",
@@ -13,6 +14,7 @@ export class CrunchDetailsComponent implements OnInit {
   crunchList$;
   constructor(
     private cruncServ: CrunchListService,
+    private cartServ: CartService,
     private route: ActivatedRoute
   ) {}
 
@@ -24,9 +26,7 @@ export class CrunchDetailsComponent implements OnInit {
   }
 
   calcPrice(action) {
-    const weight = this.crunch$.weight;
-    this.crunch$.weight = action === "plus" ? weight + 10 : weight - 10;
-    this.crunch$.price =
-      this.crunch$.pricePer100gms * (this.crunch$.weight / 100);
+    this.cartServ.updateMessage("Hello! from crunch details component");
+    this.crunch$ = this.cartServ.calcPrice(this.crunch$, action);
   }
 }
