@@ -26,6 +26,7 @@ export class CrunchDetailsComponent implements OnInit {
   }
 
   calcPrice(action) {
+    this.cartServ.updateMessage("Hello! from crunch details component");
     this.crunch$ = this.cartServ.calcPrice(this.crunch$, action);
   }
 }

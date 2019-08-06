@@ -1,11 +1,29 @@
 import { Injectable, EventEmitter } from "@angular/core";
-import { Subject } from "rxjs";
+import { Subject, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class CartService {
+  private message = new Subject<any>();
+  private state = new Subject<any>();
   constructor() {}
+
+  getMessage(): Observable<any> {
+    return this.message.asObservable();
+  }
+
+  getState(): Observable<any> {
+    return this.state.asObservable();
+  }
+
+  updateState(newState) {
+    this.state.next(newState);
+  }
+
+  updateMessage(message: string) {
+    this.message.next(message);
+  }
 
   calcPrice(item, action) {
     const weight = item.weight;

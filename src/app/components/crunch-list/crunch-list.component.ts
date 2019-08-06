@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { CrunchListService } from "src/app/utils/crunch-list.service";
+import { CartService } from "../cart/cart.service";
 
 @Component({
   selector: "app-crunch-list",
@@ -10,7 +11,11 @@ import { CrunchListService } from "src/app/utils/crunch-list.service";
 export class CrunchListComponent implements OnInit {
   crunchList: any;
 
-  constructor(private router: Router, private crunchsServ: CrunchListService) {}
+  constructor(
+    private router: Router,
+    private crunchsServ: CrunchListService,
+    private cartServ: CartService
+  ) {}
 
   ngOnInit() {
     this.crunchList = this.crunchsServ.getCrunchList();
@@ -19,6 +24,7 @@ export class CrunchListComponent implements OnInit {
   addToCart(e, crunch) {
     e.stopPropagation();
     console.log(crunch);
+    this.cartServ.updateMessage("Hello! From Crunch List Component !!");
   }
 
   addWeight(e, index) {

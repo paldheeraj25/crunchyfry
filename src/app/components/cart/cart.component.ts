@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { CrunchListService } from "src/app/utils/crunch-list.service";
 import { CartService } from "./cart.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-cart",
@@ -16,11 +17,16 @@ export class CartComponent {
   carts$ = [];
   totalPrice = 0;
   deliveryCharges = 0;
+  messageFromSibling = "";
+  subscription: Subscription;
   constructor(
     private crunchListServ: CrunchListService,
     private cartServ: CartService
   ) {
     this.carts$ = this.crunchListServ.getCrunchList();
+    this.subscription = this.cartServ
+      .getState()
+      .subscribe(state => (this.totalPrice = state.totalPrice));
   }
 
   calcTotalPrice() {
@@ -45,5 +51,9 @@ export class CartComponent {
   removeCartItem(index) {
     this.carts$.splice(index, 1);
     this.calcTotalPrice();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
