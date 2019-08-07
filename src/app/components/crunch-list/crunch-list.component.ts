@@ -19,6 +19,7 @@ export class CrunchListComponent implements OnInit {
     private cartServ: CartService
   ) {
     this.apiServ.getCrunchies().subscribe(data => {
+      console.log("iam updated");
       this.crunchList = data;
     });
   }

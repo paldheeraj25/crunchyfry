@@ -2,30 +2,53 @@ import { Component, OnInit } from "@angular/core";
 import { CrunchListService } from "src/app/utils/crunch-list.service";
 import { ActivatedRoute } from "@angular/router";
 import { CartService } from "../cart/cart.service";
+import { ApiService } from "src/app/utils/api.service";
 
 @Component({
   selector: "app-crunch-details",
   templateUrl: "./crunch-details.component.html",
   styleUrls: ["./crunch-details.component.scss"]
 })
-export class CrunchDetailsComponent implements OnInit {
-  crunch$;
+export class CrunchDetailsComponent {
+  crunch;
   weight = 100;
-  crunchList$;
+  crunchList;
   constructor(
     private cruncServ: CrunchListService,
     private cartServ: CartService,
-    private route: ActivatedRoute
-  ) {}
-
-  ngOnInit() {
+    private route: ActivatedRoute,
+    private apiServ: ApiService
+  ) {
     this.route.params.subscribe(params => {
-      this.crunch$ = this.cruncServ.getACrunch(params.id);
+      this.apiServ.getACrunchy(params.id).subscribe(data => {
+        this.crunch = data;
+      });
     });
-    this.crunchList$ = this.cruncServ.getCrunchList();
+    this.crunchList = this.cruncServ.getCrunchList();
+    this.apiServ.getCrunchies().subscribe(data => {
+      this.crunchList = data;
+    });
   }
 
   calcPrice(action) {
-    this.crunch$ = this.cartServ.calcPrice(this.crunch$, action);
+    this.crunch = this.cartServ.calcPrice(this.crunch, action);
+  }
+
+  addToCart(e, crunch) {
+    console.log(e);
+    e.stopPropagation();
+    crunch.cart = true;
+    this.cartServ.updateCart(crunch, "add");
+  }
+
+  removeFromCart(e, crunch) {
+    e.stopPropagation();
+    crunch.cart = false;
+    this.cartServ.updateCart(crunch, "remove");
+  }
+
+  updateWeight(e, crunch, action) {
+    e.stopPropagation();
+    crunch = this.cartServ.calcPrice(crunch, action);
   }
 }

@@ -7,20 +7,20 @@
         alt=""
       />
     </div>
-    <div class="col-md-4">
-      <h5 class="crunch-box-title">{{ crunch$.name }}</h5>
-      <p class="crunch-box-desc">{{ crunch$.desc }}</p>
+    <div class="col-md-4" *ngIf="crunch">
+      <h5 class="crunch-box-title">{{ crunch.name }}</h5>
+      <p class="crunch-box-desc">{{ crunch.desc }}</p>
       <div class="crunch-price-calc">
         <div class="row">
           <span class="col-md-2">Weight:</span>
           <span class="col-md-3 weight-calc">
             <i
               class="fas fa-minus-square pr-2 cursor-pointer"
-              [ngClass]="{ disabled: crunch$.weight <= crunch$.baseWeight }"
+              [ngClass]="{ disabled: crunch.weight <= crunch.baseWeight }"
               (click)="calcPrice('minus')"
             >
             </i>
-            <span class="grams pr-2">{{ crunch$.weight }}</span>
+            <span class="grams pr-2">{{ crunch.weight }}</span>
             <i
               class="fas fa-plus-square cursor-pointer"
               (click)="calcPrice('plus')"
@@ -31,14 +31,22 @@
         </div>
         <div class="crunch-box-ecom-section">
           <div class="rate">
-            Price: <i class="fas fa-rupee-sign"></i> {{ crunch$.price }}
+            Price: <i class="fas fa-rupee-sign"></i> {{ crunch.price }}
           </div>
           <div class="crt-section">
             <button
+              *ngIf="!crunch.cart"
               class="primary-btn addCartBtn-home"
-              (click)="addToCart(crunch)"
+              (click)="addToCart($event, crunch)"
             >
-              Add To Cart
+              Add to cart
+            </button>
+            <button
+              *ngIf="crunch.cart"
+              class="primary-btn addCartBtn-home"
+              (click)="removeFromCart($event, crunch)"
+            >
+              Remove from cart
             </button>
           </div>
         </div>
@@ -50,7 +58,7 @@
     <section class="crunch-list-secttion">
       <div
         class="crunch-box cursor-pointer"
-        *ngFor="let crunch of crunchList$ | slice: 0:4; let i = index"
+        *ngFor="let crunch of crunchList | slice: 0:4; let i = index"
         (click)="detailsView(crunch)"
       >
         <img
@@ -65,15 +73,18 @@
           <div class="text-center">
             <i
               class="fas fa-minus-square"
-              (click)="reduceWeight($event, i)"
+              (click)="updateWeight($event, crunch, 'remove')"
             ></i>
             <input
               type="number"
               class="list-weight-input text-center"
-              [(ngModel)]="crunchList$[i].weight"
+              [(ngModel)]="crunchList[i].weight"
               value="100"
             />
-            <i class="fas fa-plus-square" (click)="addWeight($event, i)"></i>
+            <i
+              class="fas fa-plus-square"
+              (click)="updateWeight($event, crunch, 'plus')"
+            ></i>
           </div>
           <span>grams</span>
         </div>
@@ -83,10 +94,18 @@
           </div>
           <div class="crt-section">
             <button
+              *ngIf="!crunch.cart"
               class="primary-btn addCartBtn-home"
               (click)="addToCart($event, crunch)"
             >
-              Add To Cart
+              Add to cart
+            </button>
+            <button
+              *ngIf="crunch.cart"
+              class="primary-btn addCartBtn-home"
+              (click)="removeFromCart($event, crunch)"
+            >
+              Remove from cart
             </button>
           </div>
         </div>

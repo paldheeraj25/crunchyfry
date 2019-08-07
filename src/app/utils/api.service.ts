@@ -8,10 +8,15 @@ import { CartService } from "../components/cart/cart.service";
 })
 export class ApiService {
   baseUrl = "http://localhost:3000/";
-  constructor(private http: HttpClient, private cartServ: CartService) {}
+  constructor(private http: HttpClient) {}
 
   getCrunchies(): Observable<any> {
     const url = this.baseUrl + "crunchies";
+    return this.http.get(url);
+  }
+
+  getACrunchy(crunchId): Observable<any> {
+    const url = `${this.baseUrl}crunchies/${crunchId}`;
     return this.http.get(url);
   }
 

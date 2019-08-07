@@ -39,6 +39,7 @@ export class CartComponent {
   }
 
   removeCartItem(item) {
+    item.cart = false;
     this.cartServ.updateCart(item, "remove");
   }
 
