@@ -33,8 +33,6 @@
   z-index: 105;
   background: #fbfbfb;
   transform: translateX(100%);
-
-  font-family: Lato;
 }
 
 .li-cart-summary-wrapper.show {
@@ -65,4 +63,10 @@ label {
   font-size: 13px;
   color: #028008;
   font-weight: 600;
+}
+
+.empty-cart {
+  font-weight: 600;
+  font-style: italic;
+  color: red;
 }

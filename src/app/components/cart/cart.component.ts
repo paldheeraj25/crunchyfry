@@ -1,5 +1,7 @@
-import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
-import { CrunchListService } from "../../utils/crunch-list.service";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { CrunchListService } from "src/app/utils/crunch-list.service";
+import { CartService } from "./cart.service";
+import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
 
 @Component({
@@ -13,18 +15,32 @@ export class CartComponent {
   @Output()
   unsetCart = new EventEmitter();
 
-  totalPrice: any;
-  deliveryCharge: any;
-
-  carts$ = [];
-  constructor(private crunchListServ: CrunchListService, public router: Router) {
-    this.carts$ = this.crunchListServ.getCrunchList();
+  state = {
+    items: [],
+    totalPrice: 0,
+    deliveryCharges: 0
+  };
+  subscription: Subscription;
+  constructor(private cartServ: CartService, private router: Router) {
+    this.subscription = this.cartServ.getState().subscribe(state => {
+      console.log(state);
+      this.state = state;
+    });
   }
+
+  ngOnChanges() { }
 
   onClose() {
     this.unsetCart.emit();
   }
 
+  updateWeight(item, action, index) { }
+
+  removeCartItem(index) { }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
   checkout() {
     this.router.navigate(["/checkout/checkout-address"]);
   }
