@@ -51,8 +51,4 @@ export class CrunchDetailsComponent {
     e.stopPropagation();
     crunch = this.cartServ.calcPrice(crunch, action);
   }
-
-  addToCart(crunch) {
-    console.log(crunch);
-  }
 }
