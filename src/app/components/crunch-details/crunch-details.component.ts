@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { CrunchListService } from "src/app/utils/crunch-list.service";
 import { ActivatedRoute } from "@angular/router";
+import { CrunchListService } from "../../utils/crunch-list.service";
 
 @Component({
   selector: "app-crunch-details",
@@ -14,7 +14,7 @@ export class CrunchDetailsComponent implements OnInit {
   constructor(
     private cruncServ: CrunchListService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -28,5 +28,9 @@ export class CrunchDetailsComponent implements OnInit {
     this.crunch$.weight = action === "plus" ? weight + 10 : weight - 10;
     this.crunch$.price =
       this.crunch$.pricePer100gms * (this.crunch$.weight / 100);
+  }
+
+  addToCart(crunch) {
+    console.log(crunch);
   }
 }

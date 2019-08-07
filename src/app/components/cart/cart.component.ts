@@ -13,6 +13,9 @@ export class CartComponent {
   @Output()
   unsetCart = new EventEmitter();
 
+  totalPrice: any;
+  deliveryCharge: any;
+
   carts$ = [];
   constructor(private crunchListServ: CrunchListService, public router: Router) {
     this.carts$ = this.crunchListServ.getCrunchList();
