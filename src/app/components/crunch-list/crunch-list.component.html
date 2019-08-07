@@ -37,7 +37,7 @@
             class="primary-btn addCartBtn-home"
             (click)="addToCart($event, crunch)"
           >
-            Add To Cart
+            {{ crunch.cart ? "Remove from cart" : "Add to cart" }}
           </button>
         </div>
       </div>

@@ -14,7 +14,8 @@ export class CrunchListService {
       baseWeight: 100,
       rate: 1.2,
       price: 90,
-      pricePer100gms: 90
+      pricePer100gms: 90,
+      cart: false
     },
     {
       id: "cornitoes-green-peas",
@@ -25,7 +26,8 @@ export class CrunchListService {
       baseWeight: 100,
       rate: 1.5,
       price: 110,
-      pricePer100gms: 110
+      pricePer100gms: 110,
+      cart: false
     },
     {
       id: "neo-burger",
@@ -36,7 +38,8 @@ export class CrunchListService {
       baseWeight: 100,
       rate: 1,
       price: 108,
-      pricePer100gms: 108
+      pricePer100gms: 108,
+      cart: false
     },
     {
       id: "too-yum-multigrain",
@@ -47,7 +50,8 @@ export class CrunchListService {
       baseWeight: 100,
       rate: 1.05,
       price: 40,
-      pricePer100gms: 40
+      pricePer100gms: 40,
+      cart: false
     }
   ];
   constructor() {}

@@ -15,44 +15,28 @@ export class CartComponent {
   @Output()
   unsetCart = new EventEmitter();
 
-  carts$ = [];
-  totalPrice = 0;
-  deliveryCharges = 0;
-  messageFromSibling = "";
+  state = {
+    items: [],
+    totalPrice: 0,
+    deliveryCharges: 0
+  };
   subscription: Subscription;
-  constructor(
-    private crunchListServ: CrunchListService,
-    private cartServ: CartService
-  ) {
-    this.carts$ = this.crunchListServ.getCrunchList();
-    this.subscription = this.cartServ
-      .getState()
-      .subscribe(state => (this.totalPrice = state.totalPrice));
+  constructor(private cartServ: CartService, private router: Router) {
+    this.subscription = this.cartServ.getState().subscribe(state => {
+      console.log(state);
+      this.state = state;
+    });
   }
 
-  calcTotalPrice() {
-    const values = this.cartServ.calcTotalPrice(this.carts$);
-    this.totalPrice = values.totalPrice;
-    this.deliveryCharges = values.deliveryCharges;
-  }
-
-  ngOnChanges() {
-    this.calcTotalPrice();
-  }
+  ngOnChanges() {}
 
   onClose() {
     this.unsetCart.emit();
   }
 
-  updateWeight(item, action, index) {
-    this.carts$[index] = this.cartServ.calcPrice(item, action);
-    this.calcTotalPrice();
-  }
+  updateWeight(item, action, index) {}
 
-  removeCartItem(index) {
-    this.carts$.splice(index, 1);
-    this.calcTotalPrice();
-  }
+  removeCartItem(index) {}
 
   ngOnDestroy() {
     this.subscription.unsubscribe();

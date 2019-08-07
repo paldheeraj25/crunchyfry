@@ -10,6 +10,7 @@ import { CartService } from "../cart/cart.service";
 })
 export class CrunchListComponent implements OnInit {
   crunchList: any;
+  state;
 
   constructor(
     private router: Router,
@@ -23,8 +24,11 @@ export class CrunchListComponent implements OnInit {
 
   addToCart(e, crunch) {
     e.stopPropagation();
-    console.log(crunch);
-    this.cartServ.updateMessage("Hello! From Crunch List Component !!");
+    this.cartServ.getState().subscribe(state => {
+      this.state = state;
+    });
+    crunch.cart = true;
+    this.state.items.push(crunch);
   }
 
   addWeight(e, index) {
