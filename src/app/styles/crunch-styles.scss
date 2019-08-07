@@ -30,17 +30,16 @@
   border-radius: 5px;
 }
 
+.fa-plus-square,
+.fa-minus-square {
+  cursor: pointer;
+}
+
 .crunch-weight {
   display: flex;
   justify-content: center;
   .list-weight-input {
     width: 30%;
-  }
-  .fa-minus-square {
-    cursor: pointer;
-  }
-  .fa-plus-square {
-    cursor: pointer;
   }
 }
 @media (max-width: 700px) {

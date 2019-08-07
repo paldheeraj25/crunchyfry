@@ -15,7 +15,7 @@
           <span class="col-md-2">Weight:</span>
           <span class="col-md-3 weight-calc">
             <i
-              class="fas fa-minus-square cursor-pointer pr-2"
+              class="fas fa-minus-square pr-2 cursor-pointer"
               [ngClass]="{ disabled: crunch$.weight <= crunch$.baseWeight }"
               (click)="calcPrice('minus')"
             >

@@ -39,18 +39,19 @@
           <div class="item-close pb-3 text-right">
             <i
               class="fas fa-close cursor-pointer"
-              (click)="removeCartItem(index)"
+              (click)="removeCartItem(item)"
             ></i>
           </div>
           <div class="weight-cacl pb-2 text-right pt-2">
             <i
               class="fas fa-minus-square cursor-pointer"
-              (click)="updateWeight(item, 'minus', inde)"
+              (click)="updateWeight(item, 'minus')"
+              [ngClass]="{ disabled: item.weight <= item.baseWeight }"
             ></i>
             <span> 50 grams </span>
             <i
               class="fas fa-plus-square cursor-pointer"
-              (click)="updateWeight(item, 'plus', index)"
+              (click)="updateWeight(item, 'plus')"
             ></i>
           </div>
         </div>

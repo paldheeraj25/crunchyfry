@@ -17,14 +17,18 @@
       <div class="crunch-weight">
         <span>weight</span>
         <div class="text-center">
-          <i class="fas fa-minus-square" (click)="reduceWeight($event, i)"></i>
-          <input
-            type="number"
-            class="list-weight-input text-center"
-            [(ngModel)]="crunchList[i].weight"
-            value="100"
-          />
-          <i class="fas fa-plus-square" (click)="addWeight($event, i)"></i>
+          <i
+            class="fas fa-minus-square cursor-poniter ml-2"
+            (click)="updateWeight($event, crunch, 'minus')"
+            [ngClass]="{ disabled: crunch.weight <= crunch.baseWeight }"
+          ></i>
+          <span class="ml-2" style="display: inline-block;">{{
+            crunch.weight
+          }}</span>
+          <i
+            class="fas fa-plus-square cursor-poniter ml-2 mr-2"
+            (click)="updateWeight($event, crunch, 'plus')"
+          ></i>
         </div>
         <span>grams</span>
       </div>
@@ -34,10 +38,18 @@
         </div>
         <div class="crt-section">
           <button
+            *ngIf="!crunch.cart"
             class="primary-btn addCartBtn-home"
             (click)="addToCart($event, crunch)"
           >
-            {{ crunch.cart ? "Remove from cart" : "Add to cart" }}
+            Add to cart
+          </button>
+          <button
+            *ngIf="crunch.cart"
+            class="primary-btn addCartBtn-home"
+            (click)="removeFromCart($event, crunch)"
+          >
+            Remove from cart
           </button>
         </div>
       </div>
