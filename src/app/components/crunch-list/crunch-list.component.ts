@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { CrunchListService } from "src/app/utils/crunch-list.service";
+import { CrunchListService } from "../../utils/crunch-list.service";
 import { CartService } from "../cart/cart.service";
 import { ApiService } from "src/app/utils/api.service";
 

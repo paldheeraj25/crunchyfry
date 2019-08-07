@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { CrunchListService } from "src/app/utils/crunch-list.service";
 import { ActivatedRoute } from "@angular/router";
+import { CrunchListService } from "../../utils/crunch-list.service";
 import { CartService } from "../cart/cart.service";
 import { ApiService } from "src/app/utils/api.service";
 
@@ -50,5 +50,9 @@ export class CrunchDetailsComponent {
   updateWeight(e, crunch, action) {
     e.stopPropagation();
     crunch = this.cartServ.calcPrice(crunch, action);
+  }
+
+  addToCart(crunch) {
+    console.log(crunch);
   }
 }

@@ -27,7 +27,7 @@ export class CartComponent {
     });
   }
 
-  ngOnChanges() {}
+  ngOnChanges() { }
 
   onClose() {
     this.unsetCart.emit();
