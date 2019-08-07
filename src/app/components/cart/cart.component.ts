@@ -23,7 +23,6 @@ export class CartComponent {
   subscription: Subscription;
   constructor(private cartServ: CartService, private router: Router) {
     this.subscription = this.cartServ.getState().subscribe(state => {
-      console.log(state);
       this.state = state;
     });
   }
@@ -34,14 +33,21 @@ export class CartComponent {
     this.unsetCart.emit();
   }
 
-  updateWeight(item, action, index) { }
+  updateWeight(item, action) {
+    item = this.cartServ.calcPrice(item, action);
+    this.cartServ.updateCart(item, "weight");
+  }
 
-  removeCartItem(index) { }
+  removeCartItem(item) {
+    item.cart = false;
+    this.cartServ.updateCart(item, "remove");
+  }
+
+  checkout() {
+    this.router.navigate(["/checkout/checkout-address"]);
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-  }
-  checkout() {
-    this.router.navigate(["/checkout/checkout-address"]);
   }
 }

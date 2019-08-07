@@ -1,7 +1,9 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+
 import { HomeComponent } from "./home.component";
 import { CrunchListComponent } from "../components/crunch-list/crunch-list.component";
 import { HomeRoutingModule } from "./home-routing.module";
@@ -11,7 +13,13 @@ import { FooterComponent } from "../components/footer/footer.component";
 import { CartComponent } from "../components/cart/cart.component";
 
 @NgModule({
-  imports: [CommonModule, FormsModule, RouterModule, HomeRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    HomeRoutingModule,
+    HttpClientModule
+  ],
   declarations: [
     HeaderComponent,
     CartComponent,
@@ -22,4 +30,4 @@ import { CartComponent } from "../components/cart/cart.component";
   ],
   exports: [HeaderComponent, FooterComponent, CartComponent]
 })
-export class HomeModule { }
+export class HomeModule {}
