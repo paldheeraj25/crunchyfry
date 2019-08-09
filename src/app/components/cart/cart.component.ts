@@ -27,7 +27,7 @@ export class CartComponent {
     });
   }
 
-  ngOnChanges() { }
+  ngOnChanges() {}
 
   onClose() {
     this.unsetCart.emit();
@@ -44,6 +44,7 @@ export class CartComponent {
   }
 
   checkout() {
+    this.unsetCart.emit();
     this.router.navigate(["/checkout/checkout-address"]);
   }
 
